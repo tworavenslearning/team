@@ -1,0 +1,56 @@
+name: New Agent Request
+description: Propose a new enablement agent for the collection
+title: "[New Agent] "
+labels: ["new-agent"]
+body:
+  - type: input
+    id: agent-name
+    attributes:
+      label: Agent Name
+      description: The name of the proposed agent
+      placeholder: e.g., Content Quality Reviewer
+    validations:
+      required: true
+
+  - type: dropdown
+    id: division
+    attributes:
+      label: Division
+      description: Which division does this agent belong to?
+      options:
+        - content-intelligence
+        - content-architecture
+        - feedback-insights
+        - standards-governance
+        - metrics-outcomes
+        - orchestration
+        - strategy
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Brief description of the agent's purpose and capabilities
+      placeholder: Describe what this agent does...
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: Primary use case or workflow this agent supports
+      placeholder: Describe the main use case...
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why This Agent Is Needed
+      description: Justification for adding this agent to the collection
+      placeholder: Explain why this agent fills a gap...
+    validations:
+      required: true

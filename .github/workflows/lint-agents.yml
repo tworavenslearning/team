@@ -1,0 +1,40 @@
+name: Lint Agent Files
+
+on:
+  pull_request:
+    paths:
+      - 'content-intelligence/**'
+      - 'content-architecture/**'
+      - 'feedback-insights/**'
+      - 'standards-governance/**'
+      - 'metrics-outcomes/**'
+      - 'orchestration/**'
+      - 'strategy/**'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed agent files
+        id: changed-files
+        run: |
+          FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- \
+            content-intelligence/ content-architecture/ feedback-insights/ \
+            standards-governance/ metrics-outcomes/ orchestration/ strategy/ | tr '\n' ' ')
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Run lint on changed files
+        run: |
+          FILES="${{ steps.changed-files.outputs.files }}"
+          if [ -n "$FILES" ]; then
+            scripts/lint-agents.sh $FILES
+          else
+            echo "No agent files changed, skipping lint."
+          fi

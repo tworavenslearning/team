@@ -1,0 +1,66 @@
+name: Bug Report
+description: Report an issue with an agent definition or script
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: affected
+    attributes:
+      label: Agent or Script Affected
+      description: Name of the agent or script with the issue
+      placeholder: e.g., content-quality-reviewer or scripts/lint-agents.sh
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Clear description of the bug
+      placeholder: Describe the issue...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen when working correctly
+      placeholder: Describe expected behavior...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happens
+      placeholder: Describe actual behavior...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ai-tool
+    attributes:
+      label: AI Tool Used
+      description: Which AI tool were you using when you encountered this?
+      options:
+        - Cursor
+        - GitHub Copilot
+        - Claude
+        - ChatGPT
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How to reproduce the bug
+      placeholder: |
+        1. Step one
+        2. Step two
+        3. Step three
+    validations:
+      required: true
