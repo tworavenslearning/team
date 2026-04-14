@@ -1,6 +1,6 @@
 # TEAM — Technical Enablement Agent Multiplier
 
-> *"AI agent personas purpose-built for technical enablement practitioners."*
+> *"AI agents purpose-built for technical enablement practitioners."*
 
 16 specialist agents. 5 divisions. One complete enablement content lifecycle — from audit through measurement. TEAM gives a single enablement practitioner the throughput of an entire department.
 
@@ -8,6 +8,10 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://makeapullrequest.com)
 [![GitHub issues](https://img.shields.io/github/issues/tworavenslearning/team.svg)](https://github.com/tworavenslearning/team/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/tworavenslearning/team.svg)](https://github.com/tworavenslearning/team/commits/main)
+
+---
+
+![TEAM Agent Roster](brand/team-roster-banner.png)
 
 ---
 
@@ -53,7 +57,7 @@ No coding required. If you can open a file and paste text, you can use TEAM.
 
 ## How It Works
 
-These agents are **prompt personas**, not autonomous services. Each agent is a Markdown file that defines a specialized role: its identity, rules, workflows, deliverables, and success metrics. When loaded into an AI tool, the agent tells the AI *how to think and what to produce* for that domain.
+These agents are **judgment systems**, not task lists. Each agent is a Markdown file that encodes a specialized role: its identity, operating rules, state/action/reward model, severity classifications, and escalation protocols. When loaded into an AI tool, the agent tells the AI what to produce and it tells the AI how to weigh evidence, classify findings, and decide when to escalate.
 
 **The practical flow:**
 
@@ -207,6 +211,19 @@ The collection works natively with Claude Code and ships conversion + install sc
 ./scripts/install.sh           # Interactive install
 ./scripts/install.sh --tool cursor  # Target a specific tool
 ```
+
+---
+
+## Roadmap
+
+TEAM is actively maintained. Planned work includes:
+
+- **New agents** — additional specialist roles to extend coverage beyond the current roster
+- **Native integrations** — direct connections to common LMS, CMS, and content platforms (Confluence, Notion, Seismic, Highspot, and others)
+- **Evaluation framework** — structured methodology for measuring agent output quality and consistency across deployments
+- **Community contributions** — guidelines and templates for practitioners to submit domain-specific agent variants
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) to propose additions or improvements. Open a GitHub issue to vote on or discuss roadmap priorities.
 
 ---
 

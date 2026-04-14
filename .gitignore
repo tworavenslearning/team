@@ -32,7 +32,7 @@ venv/
 .claude/
 
 # Private / personal reference
-brand/
+brand/team-profile-*.png
 GITHUB_MIGRATION_GUIDE.md
 
 # Secrets
